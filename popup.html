@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Time Tracker</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 320px;
+        min-height: 200px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0f0f0f;
+        color: #ffffff;
+        padding: 16px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #2a2a2a;
+      }
+
+      .header h1 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .header span {
+        font-size: 11px;
+        color: #888;
+        margin-left: auto;
+      }
+
+      .site-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #1e1e1e;
+      }
+
+      .site-row:last-child {
+        border-bottom: none;
+      }
+
+      .site-name {
+        font-size: 13px;
+        color: #e0e0e0;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
+      }
+
+      .site-bar-wrap {
+        width: 60px;
+        height: 4px;
+        background: #2a2a2a;
+        border-radius: 2px;
+        margin: 0 10px;
+      }
+
+      .site-bar {
+        height: 4px;
+        background: #6c63ff;
+        border-radius: 2px;
+      }
+
+      .site-time {
+        font-size: 12px;
+        color: #6c63ff;
+        font-weight: 600;
+        min-width: 48px;
+        text-align: right;
+      }
+
+      .empty {
+        text-align: center;
+        color: #555;
+        font-size: 13px;
+        padding: 32px 0;
+      }
+
+      .sync-btn {
+        width: 100%;
+        margin-top: 14px;
+        padding: 9px;
+        background: #6c63ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      .sync-btn:hover {
+        background: #5a52e0;
+      }
+
+      .sync-status {
+        text-align: center;
+        font-size: 11px;
+        color: #888;
+        margin-top: 8px;
+        min-height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>⏱ Time Tracker</h1>
+      <span id="today-date"></span>
+    </div>
+
+    <div id="site-list">
+      <div class="empty">No data yet today.<br/>Browse something!</div>
+    </div>
+
+    <button class="sync-btn" id="sync-btn">Sync to Server</button>
+    <div class="sync-status" id="sync-status"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
