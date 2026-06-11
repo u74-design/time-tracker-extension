@@ -167,7 +167,7 @@ async function syncToServer() {
     for (const [date, sites] of Object.entries(data)) {
       for (const [site, ms] of Object.entries(sites)) {
         try {
-          await fetch("http://localhost:5000/api/log", {
+          await fetch("https://time-tracker-extension-jc74.onrender.com/api/log", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ date, site, ms })

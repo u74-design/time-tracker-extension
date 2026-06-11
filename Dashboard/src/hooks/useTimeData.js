@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://time-tracker-extension-jc74.onrender.com/api";
 
 export function useTimeData() {
     const [data, setData] = useState([]);
