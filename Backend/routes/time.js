@@ -17,7 +17,7 @@ Router.post("/log",async (req,res)=>{
         const log = await Timelog.findOneAndUpdate(
             {date, site},
             {$inc : {ms}},
-            {upsert: true, new: true}
+            {upsert: true, after: true}
         )
 
         res.status(200).json({
@@ -33,7 +33,7 @@ Router.post("/log",async (req,res)=>{
     }
 });
 
-Router.get("/summury", async (req,res)=>{
+Router.get("/summary", async (req,res)=>{
     try{
         const log = await Timelog.find()
         .sort({date : -1})
