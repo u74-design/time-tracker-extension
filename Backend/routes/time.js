@@ -1,5 +1,5 @@
 import express from 'express';
-import Timelog from '../models/Timelog.js';
+import Timelog from '../models/TimeLog.js';
 
 const Router = express.Router();
 
